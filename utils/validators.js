@@ -13,7 +13,7 @@ exports.validateRegisterInput = (
       'Email field is required! You need to provide a valid email address';
   } else {
     const emailChecker =
-    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
     if (!email.match(emailChecker)) {
       errors.email = 'Email must be a valid email address';
@@ -28,6 +28,20 @@ exports.validateRegisterInput = (
     errors,
     // if it's true there is no errors.. data is valid
     // if length of Object.keys(errors) is still 0
+    valid: Object.keys(errors).length < 1,
+  };
+};
+exports.validateLogin = (email, password) => {
+  const errors = {};
+  if (email.trim() === '') {
+    errors.email =
+      'Email field is required! You need to provide a valid email address';
+  }
+  if (password === '') {
+    errors.password = 'Password must be provided!';
+  }
+  return {
+    errors,
     valid: Object.keys(errors).length < 1,
   };
 };

@@ -14,7 +14,7 @@ exports.typeDefs = gql`
     token: String!
     createdAt: String!
   }
-  input RegisterInput{
+  input RegisterInput {
     username: String!
     email: String!
     password: String!
@@ -25,6 +25,6 @@ exports.typeDefs = gql`
   }
   type Mutation {
     register(registerInput: RegisterInput): User!
-    # register is the fn() .. registerInput is the 'arg'
+    login(username: String!, password: String!): User!
   }
 `;

@@ -23,6 +23,10 @@ const port = process.env.PORT || 8000;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
+  // now we have access to the req obj
+  // a copy of req obj is added to context
+  // now i can access 'req' from 'context'
+  context: ({ req }) => ({ req }),
 });
 
 server

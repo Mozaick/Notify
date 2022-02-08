@@ -3,18 +3,12 @@ const mongoose = require('mongoose');
 const postSchema = new mongoose.Schema({
   username: String,
   body: String,
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
+  createdAt: String,
   comments: [
     {
       username: String,
       body: String,
-      createdAt: {
-        type: Date,
-        default: Date.now,
-      },
+      createdAt: String,
     },
   ],
   likes: [

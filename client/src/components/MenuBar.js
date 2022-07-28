@@ -4,7 +4,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 function MenuBar() {
-//   const [activeItem, setActiveItem] = useState('');
   return (
     <>
       <Navbar bg="light" variant="light">

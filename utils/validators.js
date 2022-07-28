@@ -26,8 +26,6 @@ exports.validateRegisterInput = (
   }
   return {
     errors,
-    // if it's true there is no errors.. data is valid
-    // if length of Object.keys(errors) is still 0
     valid: Object.keys(errors).length < 1,
   };
 };
